@@ -7,18 +7,16 @@ import java.util.Scanner;
 public class Program {
 
 	public static void main(String[] args) {
+
 		File file = new File("/Users/moiss/Documents/Java/Files_Source_Studying/temp_files/in.txt");
-
 		Scanner sc = null;
-
 		try {
 			sc = new Scanner(file);
 			while (sc.hasNextLine()) {
 				System.out.println(sc.nextLine());
 			}
 		} catch (IOException e) {
-			// TODO: handle exception
-			System.out.println(e.getMessage() + "");
+			System.out.println("Error: " + e.getMessage());
 		} finally {
 			if (sc != null) {
 				sc.close();
